@@ -42,21 +42,21 @@
     },
     "autoload": {
         "psr-4": {
-            "juhniorsantos\\LaravelSes\\": "src/"
+            "oliveready7\\LaravelSes\\": "src/"
         }
     },
     "autoload-dev": {
        "psr-4": {
-           "juhniorsantos\\LaravelSes\\Tests\\": "tests/"
+           "oliveready7\\LaravelSes\\Tests\\": "tests/"
        }
    },
     "extra": {
         "laravel": {
             "providers": [
-                "juhniorsantos\\LaravelSes\\LaravelSesServiceProvider"
+                "oliveready7\\LaravelSes\\LaravelSesServiceProvider"
             ],
             "aliases": {
-                "SesMail": "juhniorsantos\\LaravelSes\\SesMail"
+                "SesMail": "oliveready7\\LaravelSes\\SesMail"
             }
         }
     },
