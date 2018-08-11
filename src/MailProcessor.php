@@ -55,14 +55,16 @@ class MailProcessor
 
     public function linkTracking()
     {
-        $dom = new Dom;
-        $dom->load($this->getEmailBody());
-        $anchors = $dom->find('a');
+        $dom = new \DOMDocument();
+        $dom->loadHTML( $this->getEmailBody() );
+        $anchors = $dom->getElementsByTagName( 'a' );
+
         foreach ($anchors as $anchor) {
             $originalUrl = $anchor->getAttribute('href');
             $anchor->setAttribute('href', $this->createAppLink($originalUrl));
         }
-        $this->setEmailBody($dom->innerHtml);
+
+        $this->setEmailBody($dom->saveHTML());
         return $this;
     }
 
